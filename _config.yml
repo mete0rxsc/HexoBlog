@@ -102,5 +102,9 @@ theme: stellar
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+# .//_config.yml
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/mete0rxsc/HexoSite.git
+  branch: master # 部署分支，通常是 main 或 master
+  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}" # 可选，自定义提交信息
