@@ -108,3 +108,9 @@ deploy:
   repo: https://github.com/mete0rxsc/HexoSite.git
   branch: master # 部署分支，通常是 main 或 master
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}" # 可选，自定义提交信息
+
+#订阅RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: false
