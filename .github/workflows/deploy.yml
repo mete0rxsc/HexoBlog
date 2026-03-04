@@ -60,3 +60,4 @@ jobs:
           external_repository: mete0rxsc/HexoSite
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+          exclude_assets: ''  # 覆盖默认值，不排除任何文件
