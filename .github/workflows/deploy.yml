@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master # 当推送到 main 分支时触发
+      - master
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.14.0' # 使用你本地 Node.js 版本
+          node-version: '22.14.0'
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -28,11 +28,35 @@ jobs:
 
       - name: Generate static files
         run: npx hexo generate
+      
+      # ===== 复制部署脚本到 public 目录 =====
+      - name: Copy deploy workflow to public
+        run: |
+          echo "📋 复制部署脚本到 public 目录..."
+          
+          # 检查源文件是否存在
+          if [ -f "./HexoSite/.github/workflows/deploy-to-server.yml" ]; then
+            # 创建目标目录
+            mkdir -p ./public/.github/workflows
+            
+            # 复制文件
+            cp ./HexoSite/.github/workflows/deploy-to-server.yml ./public/.github/workflows/
+            
+            echo "✅ 部署脚本已复制："
+            ls -la ./public/.github/workflows/
+          else
+            echo "⚠️ 警告：未找到部署脚本文件"
+            echo "   期望路径: ./HexoSite/.github/workflows/deploy-to-server.yml"
+            exit 1  # 如果文件不存在，让工作流失败
+          fi
+      # ====================================
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to HexoSite
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }} # 使用 Personal Token
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./public
-          publish_branch: master # 部署到页面仓库的 main 分支
-          external_repository: mete0rxsc/HexoSite # 目标页面仓库
+          publish_branch: master
+          external_repository: mete0rxsc/HexoSite
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
