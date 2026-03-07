@@ -35,6 +35,7 @@ random: true
 {% link https://blog.edmc.cn/ EDream的小破站 icon:https://blog.edmc.cn/upload/fillet-ElectricityDream.png desc:true %}
 {% link https://www.eilo.uk/ Eilo’s Blog icon:https://www.eilo.uk/img/logo.png desc:true %}
 {% link https://huangjiazhang.xyz/ 浮生hjz icon:https://q1.qlogo.cn/g?b=qq&nk=1716074222&s=640 desc:true %}
+{% link https://blog.damonz.cn/ Damon_ZhangのBlog icon:https://blog.damonz.cn/upload/avatar.jpg desc:true %}
 
 
 
