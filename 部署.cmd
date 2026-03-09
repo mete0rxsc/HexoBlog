@@ -1,5 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
+:: 设置字符集为 UTF-8 防止中文乱码（可选）
+chcp 65001 > nul
 
 :: 1. 自动提取当前日期和时间 (格式: YYYYMMDD:HHmm)
 set CUR_DATE=%date:~0,4%%date:~5,2%%date:~8,2%
