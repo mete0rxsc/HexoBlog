@@ -164,3 +164,20 @@ hexo_safego:
   # 调试设置
   debug:
     enable: false               # 启用调试模式
+
+# LivePhoto动图
+livephoto:
+  enable: true
+  autoplay: true          # 是否自动播放（当进入视口时）
+  hover_to_play: true     # 鼠标悬停在图片上时播放视频
+  click_to_play: true     # 点击图片时播放视频（移动端主要依赖这个）
+  lazy_load: true         # 是否启用懒加载（图片进入可视区域才加载视频，提高性能）
+  threshold: 0.7          # 懒加载触发比例（0.8 表示图片有 80% 进入视口才开始加载）
+  badge: true             # 是否在图片上显示 “Live” 标识
+  badge_text: 'Live'      # 标识文字
+  badge_position: 'bottom-left' # 标识位置: bottom-left, bottom-right, top-left, top-right
+  loading_animation: true # 是否显示加载动画
+  preload: 'auto'         # video 的 preload 行为  # auto = 浏览器自动预加载  # metadata = 只加载元数据  # none = 不预加载
+  keep_observing: false   # 是否持续监听元素可见性  # true = 每次进入视口都会检测  # false = 加载一次就停止监听（性能更好）
+  hover_delay: 300        # 悬停延迟（毫秒）
+  weixin_disable_autoplay: true # 是否禁用微信内置浏览器的自动播放
