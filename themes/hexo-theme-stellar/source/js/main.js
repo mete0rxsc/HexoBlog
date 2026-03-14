@@ -52,11 +52,11 @@ const util = {
   },
 
   scrollTop: () => {
-    window.scrollTo({top: 0, behavior: "smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 
   scrollComment: () => {
-    document.getElementById('comments').scrollIntoView({behavior: "smooth"});
+    document.getElementById('comments').scrollIntoView({ behavior: "smooth" });
   },
 
   viewportLazyload: (target, func, enabled = true) => {
@@ -83,8 +83,8 @@ const hud = {
     el.innerHTML = msg;
     document.body.appendChild(el);
 
-    setTimeout(function(){ document.body.removeChild(el) }, d);
-    
+    setTimeout(function () { document.body.removeChild(el) }, d);
+
   },
 
 }
@@ -138,20 +138,20 @@ const init = {
         const offsetBottom = e1.getBoundingClientRect().bottom - e0.getBoundingClientRect().bottom + 100;
         const offsetTop = e1.getBoundingClientRect().top - e0.getBoundingClientRect().top - 64;
         if (offsetTop < 0) {
-          e0.scrollBy({top: offsetTop, behavior: "smooth"});
+          e0.scrollBy({ top: offsetTop, behavior: "smooth" });
         } else if (offsetBottom > 0) {
-          e0.scrollBy({top: offsetBottom, behavior: "smooth"});
+          e0.scrollBy({ top: offsetBottom, behavior: "smooth" });
         }
       }
-      
+
       var timeout = null;
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         activeTOC();
-        if(timeout !== null) clearTimeout(timeout);
-        timeout = setTimeout(function() {
+        if (timeout !== null) clearTimeout(timeout);
+        timeout = setTimeout(function () {
           scrollTOC();
         }.bind(this), 50);
-      });      
+      });
     })
   },
   sidebar: () => {
