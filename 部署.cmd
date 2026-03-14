@@ -69,7 +69,7 @@ cd /d "D:\blog\Mete0r-blog\dist"
 git add .
 git commit -m "%COMMIT_MSG%"
 
-:: 强制推送（如果需要）
+:: 强制推送（防止推送出现问题）
 echo 执行强制推送...
 git push --force
 

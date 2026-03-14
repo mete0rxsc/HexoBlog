@@ -41,25 +41,34 @@ random: true
 >我的友链:  
 -   "url": "https://www.xscnet.cn/",  
     "avatar": "https://img.xscnet.cn//i/2025/07/09/686e64ec429db.png",  
-    "name": "Mete0r’s Blog | 壹人小站",  
-    "blog": "Mete0r’s Blog | 壹人小站",  
-    "desc": "Trust the process.",  
+    "title": "Mete0r’s Blog | 壹人小站",    
+    "description": "Trust the process.",  
     "color": "#FFC0CB"  
-    "siteshot": "https://img.xscnet.cn//i/2026/03/07/69abcb393aa91.png"  
+    "snapshot": "https://img.xscnet.cn//i/2026/03/07/69abcb393aa91.png"  
     "feed": "https://www.xscnet.cn/atom.xml"  
     
 >友链格式  
 -   "url": "你的网站URL",  
-    "avatar": "你的头像URL",  
-    "name": "你的网站名称",  
-    "blog": "你的网站名称",  
-    "desc": "描述",  
-    "feed": "请填写您的RSS订阅地址"  
+    "icon": "你的头像URL",  
+    "title": "你的网站名称",  
+    "description": "描述",  
+    "feed": "请填写您的RSS订阅地址" (若无RSS订阅地址会导致友链排序权重降低)  
 
-如果我的网站有什么不好的地方，还请您多多担待啦，指出我的错误我会及时修改的~  
+**如何更改友链信息？**  
+
+1. 进入[issues模板页面](https://github.com/mete0rxsc/HexoBlogFriends/issues)  
+2. 找到您网站所对应 issues ，点击编辑按钮如下图  
+![网站所对应issues](https://img.xscnet.cn//i/2026/03/14/69b4e3549b508.png)  
+3. 点击Edit编辑按钮  
+![编辑按钮](https://img.xscnet.cn//i/2026/03/14/69b4e3548f2a1.png)  
+4.直接修改您需要修改的对应字段，并等待下一次的Action自动部署即可生效。  
+![修改字段](https://img.xscnet.cn//i/2026/03/14/69b4e3549c209.png)  
+
+如果我的网站有什么不好的地方，还请您多多担待，指出我的错误我会及时修改的~  
 填写你的友链信息，我审核通过后会在网站展示你的友链~  
 ::: warning
-在添加友链后，每天凌晨4点会进行链接检测，每天5点会抓取feed，均通过GithubAction进行    
+在添加友链后，每天凌晨4点会进行链接检测，每天凌晨5点会抓取feeds(取最近三条)，均通过GithubAction进行    
+友链会根据文章更新日期排布  
 如果有反检测，请提前告知我  
 谢谢各位博友的配合，也谢谢各位对我站点的支持  
 ::: 
